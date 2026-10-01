@@ -1,0 +1,1616 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mis 15 Años - Cristina</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --navy:#061522;
+    --navy2:#0a1d2d;
+    --navy3:#10283b;
+
+    --gold:#c9a45d;
+    --gold-light:#e5ca8b;
+    --gold-dark:#9f7a3d;
+
+    --cream:#faf7f0;
+    --white:#ffffff;
+
+    --shadow:0 20px 60px rgba(0,0,0,.30);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--navy);
+    color:var(--cream);
+    font-family:'Montserrat',sans-serif;
+    overflow-x:hidden;
+}
+
+/* =========================
+   MÚSICA
+========================= */
+
+.music-button{
+    position:fixed;
+
+    right:20px;
+    bottom:20px;
+
+    z-index:9999;
+
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    border:1px solid var(--gold);
+
+    background:rgba(6,21,34,.90);
+
+    color:var(--gold-light);
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.35);
+
+    transition:.3s;
+}
+
+.music-button:hover{
+    background:var(--gold);
+    color:var(--navy);
+}
+
+/* =========================
+   PORTADA
+========================= */
+
+.cover{
+    min-height:100vh;
+    min-height:100svh;
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    background:
+        radial-gradient(circle at 50% 35%, #17364e 0%, transparent 35%),
+        radial-gradient(circle at 20% 80%, rgba(201,164,93,.08), transparent 30%),
+        linear-gradient(145deg,#03101b,#071a2a 50%,#04111d);
+}
+
+.cover::before{
+    content:"";
+    position:absolute;
+    inset:18px;
+
+    border:1px solid rgba(201,164,93,.75);
+
+    pointer-events:none;
+}
+
+.cover::after{
+    content:"";
+    position:absolute;
+    inset:27px;
+
+    border:1px solid rgba(201,164,93,.25);
+
+    pointer-events:none;
+}
+
+.cover-content{
+    position:relative;
+    z-index:2;
+
+    width:min(90%,700px);
+
+    padding:70px 25px;
+}
+
+.cover-small{
+    font-size:12px;
+    letter-spacing:7px;
+    color:var(--gold-light);
+    margin-bottom:35px;
+}
+
+.cover-name{
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:clamp(80px,16vw,150px);
+
+    line-height:.8;
+
+    font-style:italic;
+    font-weight:500;
+
+    color:#f0d59b;
+
+    text-shadow:
+        0 3px 20px rgba(0,0,0,.4);
+}
+
+.cover-ornament{
+    margin:38px auto 28px;
+
+    width:190px;
+    height:1px;
+
+    background:linear-gradient(
+        to right,
+        transparent,
+        var(--gold),
+        transparent
+    );
+
+    position:relative;
+}
+
+.cover-ornament::before,
+.cover-ornament::after{
+    content:"✦";
+
+    position:absolute;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:var(--gold-light);
+
+    font-size:10px;
+}
+
+.cover-ornament::before{
+    left:25px;
+}
+
+.cover-ornament::after{
+    right:25px;
+}
+
+.cover-date{
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:28px;
+
+    letter-spacing:5px;
+
+    color:var(--gold-light);
+}
+
+.cover-bottom{
+    margin-top:65px;
+
+    font-size:10px;
+
+    letter-spacing:5px;
+
+    color:rgba(255,255,255,.55);
+}
+
+/* =========================
+   BOTÓN
+========================= */
+
+.enter-button{
+    display:inline-block;
+
+    margin-top:40px;
+
+    padding:14px 34px;
+
+    border:1px solid var(--gold);
+
+    color:var(--gold-light);
+
+    text-decoration:none;
+
+    font-size:11px;
+
+    letter-spacing:3px;
+
+    transition:.3s;
+
+    background:rgba(0,0,0,.12);
+}
+
+.enter-button:hover{
+    background:var(--gold);
+    color:var(--navy);
+}
+
+/* =========================
+   SECCIONES
+========================= */
+
+section{
+    padding:100px 20px;
+}
+
+.section-inner{
+    width:min(100%,950px);
+    margin:auto;
+    text-align:center;
+}
+
+.section-label{
+    font-size:11px;
+    letter-spacing:5px;
+    color:var(--gold);
+    margin-bottom:18px;
+}
+
+.section-title{
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:clamp(42px,8vw,70px);
+
+    font-weight:500;
+
+    color:var(--gold-light);
+
+    margin-bottom:25px;
+}
+
+.section-text{
+    max-width:650px;
+    margin:0 auto;
+
+    font-size:15px;
+    line-height:2;
+
+    color:rgba(255,255,255,.78);
+}
+
+/* =========================
+   CUENTA REGRESIVA
+========================= */
+
+.countdown-section{
+    background:
+        linear-gradient(
+            rgba(5,18,30,.95),
+            rgba(5,18,30,.95)
+        );
+}
+
+.countdown{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:15px;
+
+    max-width:700px;
+
+    margin:50px auto 0;
+}
+
+.count-box{
+    border:1px solid rgba(201,164,93,.45);
+
+    padding:25px 10px;
+
+    background:rgba(255,255,255,.025);
+}
+
+.count-number{
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:48px;
+
+    color:var(--gold-light);
+}
+
+.count-label{
+    margin-top:5px;
+
+    font-size:9px;
+
+    letter-spacing:3px;
+
+    color:rgba(255,255,255,.6);
+}
+
+/* =========================
+   EVENTO
+========================= */
+
+.event-section{
+    background:#081a29;
+}
+
+.event-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:20px;
+
+    max-width:850px;
+
+    margin:50px auto 0;
+}
+
+.event-card{
+    padding:35px 25px;
+
+    border:1px solid rgba(201,164,93,.35);
+
+    background:rgba(255,255,255,.025);
+}
+
+.event-icon{
+    font-size:25px;
+    margin-bottom:15px;
+}
+
+.event-card h3{
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:27px;
+
+    font-weight:500;
+
+    color:var(--gold-light);
+
+    margin-bottom:10px;
+}
+
+.event-card p{
+    font-size:13px;
+
+    line-height:1.8;
+
+    color:rgba(255,255,255,.75);
+}
+
+/* =========================
+   DRESS CODE
+========================= */
+
+.dress-section{
+    background:#061522;
+}
+
+.dress-box{
+    max-width:650px;
+
+    margin:40px auto 0;
+
+    padding:45px 25px;
+
+    border:1px solid rgba(201,164,93,.45);
+}
+
+.dress-title{
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:36px;
+
+    color:var(--gold-light);
+
+    margin-bottom:15px;
+}
+
+.dress-text{
+    color:rgba(255,255,255,.75);
+
+    font-size:14px;
+
+    line-height:1.8;
+}
+
+/* =========================
+   UBICACIÓN
+========================= */
+
+.location-section{
+    background:#081a29;
+}
+
+.map-card{
+    max-width:900px;
+
+    margin:50px auto 0;
+
+    display:grid;
+
+    grid-template-columns:1.15fr .85fr;
+
+    border:1px solid rgba(201,164,93,.45);
+
+    background:rgba(255,255,255,.025);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.35);
+
+    overflow:hidden;
+}
+
+/* =========================
+   MAPA VISUAL
+========================= */
+
+.map-preview{
+    min-height:390px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(30,65,88,.75),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #0a1d2d,
+            #071521
+        );
+}
+
+.map-preview::before{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+        linear-gradient(
+            30deg,
+            transparent 45%,
+            rgba(201,164,93,.08) 46%,
+            transparent 47%
+        ),
+        linear-gradient(
+            120deg,
+            transparent 45%,
+            rgba(255,255,255,.035) 46%,
+            transparent 47%
+        );
+
+    background-size:70px 70px;
+}
+
+.map-road{
+    position:absolute;
+
+    height:2px;
+
+    background:rgba(255,255,255,.20);
+
+    box-shadow:
+        0 0 5px rgba(255,255,255,.04);
+}
+
+.road-1{
+    width:130%;
+
+    top:42%;
+    left:-15%;
+
+    transform:rotate(18deg);
+}
+
+.road-2{
+    width:120%;
+
+    top:62%;
+    left:-10%;
+
+    transform:rotate(-12deg);
+}
+
+.road-3{
+    width:100%;
+
+    top:25%;
+    left:0;
+
+    transform:rotate(-35deg);
+}
+
+.road-4{
+    width:110%;
+
+    top:78%;
+    left:-5%;
+
+    transform:rotate(8deg);
+}
+
+.map-glow{
+    position:absolute;
+
+    width:210px;
+    height:210px;
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(201,164,93,.18),
+            transparent 70%
+        );
+}
+
+.map-pin{
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:72px;
+    height:72px;
+
+    transform:
+        translate(-50%,-50%)
+        rotate(45deg);
+
+    border-radius:
+        50% 50% 50% 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e5ca8b,
+            #a57c3d
+        );
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    box-shadow:
+        0 0 0 9px rgba(201,164,93,.08),
+        0 0 40px rgba(201,164,93,.25);
+}
+
+.map-pin span{
+    transform:rotate(-45deg);
+
+    color:#071522;
+
+    font-size:22px;
+}
+
+.map-label{
+    position:absolute;
+
+    left:50%;
+
+    bottom:35px;
+
+    transform:
+        translateX(-50%);
+
+    padding:10px 20px;
+
+    border:
+        1px solid
+        rgba(201,164,93,.45);
+
+    background:
+        rgba(4,14,23,.88);
+
+    color:var(--gold-light);
+
+    font-size:9px;
+
+    letter-spacing:3px;
+
+    white-space:nowrap;
+}
+
+/* =========================
+   INFORMACIÓN DEL MAPA
+========================= */
+
+.map-info{
+    padding:55px 40px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    text-align:left;
+}
+
+.map-small{
+    font-size:9px;
+
+    letter-spacing:4px;
+
+    color:var(--gold);
+
+    margin-bottom:15px;
+}
+
+.map-info h3{
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:42px;
+
+    font-weight:500;
+
+    line-height:1.05;
+
+    color:var(--gold-light);
+
+    margin-bottom:18px;
+}
+
+.map-info p{
+    font-size:13px;
+
+    line-height:1.8;
+
+    color:rgba(255,255,255,.70);
+
+    margin-bottom:20px;
+}
+
+.map-address{
+    color:rgba(255,255,255,.85);
+
+    font-size:12px;
+
+    line-height:1.7;
+
+    margin-bottom:25px;
+}
+
+.location-button{
+    display:inline-block;
+
+    width:max-content;
+
+    padding:14px 24px;
+
+    border:1px solid var(--gold);
+
+    color:var(--gold-light);
+
+    text-decoration:none;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    transition:.3s;
+}
+
+.location-button:hover{
+    background:var(--gold);
+
+    color:var(--navy);
+}
+
+/* =========================
+   CONFIRMACIÓN
+========================= */
+
+.confirm-section{
+    background:
+        radial-gradient(
+            circle at center,
+            #17344a,
+            #061522 65%
+        );
+}
+
+.confirm-box{
+    max-width:700px;
+
+    margin:auto;
+
+    padding:55px 25px;
+
+    border:1px solid rgba(201,164,93,.55);
+}
+
+.confirm-title{
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:50px;
+
+    color:var(--gold-light);
+
+    margin-bottom:15px;
+}
+
+.confirm-text{
+    color:rgba(255,255,255,.75);
+
+    line-height:1.8;
+
+    font-size:14px;
+}
+
+.whatsapp-button{
+    display:inline-block;
+
+    margin-top:30px;
+
+    padding:16px 32px;
+
+    background:var(--gold);
+
+    color:var(--navy);
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    font-size:11px;
+
+    letter-spacing:2px;
+
+    transition:.3s;
+}
+
+.whatsapp-button:hover{
+    background:var(--gold-light);
+}
+
+/* =========================
+   MENSAJE FINAL
+========================= */
+
+.final-section{
+    min-height:70vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    background:
+        linear-gradient(
+            rgba(4,15,25,.95),
+            rgba(4,15,25,.95)
+        );
+}
+
+.final-content{
+    max-width:750px;
+}
+
+.final-name{
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:clamp(65px,13vw,120px);
+
+    font-style:italic;
+
+    color:var(--gold-light);
+
+    margin:20px 0;
+}
+
+.final-text{
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:25px;
+
+    line-height:1.7;
+
+    color:rgba(255,255,255,.85);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:30px 20px;
+
+    text-align:center;
+
+    background:#030d16;
+
+    color:rgba(255,255,255,.4);
+
+    font-size:9px;
+
+    letter-spacing:3px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:650px){
+
+    .cover::before{
+        inset:12px;
+    }
+
+    .cover::after{
+        inset:20px;
+    }
+
+    .cover-content{
+        padding:50px 20px;
+    }
+
+    .cover-small{
+        font-size:9px;
+        letter-spacing:5px;
+    }
+
+    .cover-date{
+        font-size:21px;
+        letter-spacing:3px;
+    }
+
+    .countdown{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .event-grid{
+        grid-template-columns:1fr;
+    }
+
+    .map-card{
+        grid-template-columns:1fr;
+    }
+
+    .map-preview{
+        min-height:300px;
+    }
+
+    .map-info{
+        padding:40px 25px;
+
+        text-align:center;
+
+        align-items:center;
+    }
+
+    .map-info h3{
+        font-size:38px;
+    }
+
+    section{
+        padding:75px 18px;
+    }
+
+    .music-button{
+        right:16px;
+        bottom:16px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     MÚSICA
+===================================================== -->
+
+<audio id="musica" loop preload="auto">
+    <source src="musica-cristina.mp3" type="audio/mpeg">
+</audio>
+
+<button
+    id="musicButton"
+    class="music-button"
+    aria-label="Pausar música">
+    ♫
+</button>
+
+
+<!-- =====================================================
+     DATOS DEL EVENTO
+===================================================== -->
+
+<script>
+
+const evento = {
+
+    nombre: "Cristina",
+
+    fecha: "17 de octubre de 2026",
+
+    fechaCuentaRegresiva: "2026-10-17T22:00:00",
+
+    hora: "10:00 p. m.",
+
+    lugar: "Local de Recepciones Monroy - Salón Romántico",
+
+    direccion: "Av. Central con Av. Bolivar, Villa El Salvador",
+
+    confirmarAntes: "10 de octubre de 2026",
+
+    whatsapp: "51943660792",
+
+    dressCode: "Elegante",
+
+    mensaje:
+    "Hay momentos que quedan para siempre en el corazón. Me encantaría compartir contigo uno de los más importantes de mi vida.",
+
+    mensajeFinal:
+    "Gracias por acompañarme en esta noche tan especial.",
+
+    mapa:
+    "https://www.google.com/maps/place/Monroy+Eventos+(local)/@-12.2147238,-76.9373807,16z/data=!4m10!1m2!2m1!1smonroy!3m6!1s0x9105b9005247f5cf:0xf9113b4cfef92496!8m2!3d-12.214996!4d-76.932286!15sCgZtb25yb3laCCIGbW9ucm95kgEOZ2F5X25pZ2h0X2NsdWLgAQA!16s%2Fg%2F11xvw487x7?entry=ttu&g_ep=EgoyMDI2MDkxNi4wIKXMDSoASAFQAw%3D%3D"
+
+};
+
+</script>
+
+
+<!-- =====================================================
+     PORTADA
+===================================================== -->
+
+<section class="cover">
+
+    <div class="cover-content">
+
+        <div class="cover-small">
+            MIS 15 AÑOS
+        </div>
+
+        <div class="cover-name" id="coverName">
+            Cristina
+        </div>
+
+        <div class="cover-ornament"></div>
+
+        <div class="cover-date" id="coverDate">
+            17 · OCTUBRE · 2026
+        </div>
+
+        <a
+            href="#invitacion"
+            class="enter-button"
+            id="enterButton">
+
+            ABRIR INVITACIÓN
+
+        </a>
+
+        <div class="cover-bottom">
+            UNA NOCHE PARA RECORDAR
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MENSAJE
+===================================================== -->
+
+<section id="invitacion">
+
+    <div class="section-inner">
+
+        <div class="section-label">
+            CON MUCHO CARIÑO
+        </div>
+
+        <h2 class="section-title">
+            Una noche muy especial
+        </h2>
+
+        <p class="section-text" id="mensaje">
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CUENTA REGRESIVA
+===================================================== -->
+
+<section class="countdown-section">
+
+    <div class="section-inner">
+
+        <div class="section-label">
+            FALTA MUY POCO
+        </div>
+
+        <h2 class="section-title">
+            La cuenta regresiva
+        </h2>
+
+        <div class="countdown">
+
+            <div class="count-box">
+                <div class="count-number" id="days">00</div>
+                <div class="count-label">DÍAS</div>
+            </div>
+
+            <div class="count-box">
+                <div class="count-number" id="hours">00</div>
+                <div class="count-label">HORAS</div>
+            </div>
+
+            <div class="count-box">
+                <div class="count-number" id="minutes">00</div>
+                <div class="count-label">MINUTOS</div>
+            </div>
+
+            <div class="count-box">
+                <div class="count-number" id="seconds">00</div>
+                <div class="count-label">SEGUNDOS</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     DATOS DEL EVENTO
+===================================================== -->
+
+<section class="event-section">
+
+    <div class="section-inner">
+
+        <div class="section-label">
+            RESERVA LA FECHA
+        </div>
+
+        <h2 class="section-title">
+            La celebración
+        </h2>
+
+        <div class="event-grid">
+
+            <div class="event-card">
+
+                <div class="event-icon">
+                    ✦
+                </div>
+
+                <h3>
+                    Fecha
+                </h3>
+
+                <p id="eventDate">
+                </p>
+
+            </div>
+
+
+            <div class="event-card">
+
+                <div class="event-icon">
+                    ♡
+                </div>
+
+                <h3>
+                    Hora
+                </h3>
+
+                <p id="eventTime">
+                </p>
+
+            </div>
+
+
+            <div class="event-card">
+
+                <div class="event-icon">
+                    ✧
+                </div>
+
+                <h3>
+                    Lugar
+                </h3>
+
+                <p id="eventPlace">
+                </p>
+
+            </div>
+
+
+            <div class="event-card">
+
+                <div class="event-icon">
+                    ⌂
+                </div>
+
+                <h3>
+                    Dirección
+                </h3>
+
+                <p id="eventAddress">
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     DRESS CODE
+===================================================== -->
+
+<section class="dress-section">
+
+    <div class="section-inner">
+
+        <div class="section-label">
+            CÓDIGO DE VESTIMENTA
+        </div>
+
+        <h2 class="section-title">
+            Dress Code
+        </h2>
+
+        <div class="dress-box">
+
+            <div class="dress-title" id="dressCode">
+                Elegante
+            </div>
+
+            <div class="dress-text">
+                Queremos compartir contigo una noche
+                llena de alegría, elegancia y momentos
+                inolvidables.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     UBICACIÓN
+===================================================== -->
+
+<section class="location-section">
+
+    <div class="section-inner">
+
+        <div class="section-label">
+            EL LUGAR DE LA CELEBRACIÓN
+        </div>
+
+        <h2 class="section-title">
+            ¿Dónde nos encontramos?
+        </h2>
+
+        <div class="map-card">
+
+            <div class="map-preview">
+
+                <div class="map-glow"></div>
+
+                <div class="map-road road-1"></div>
+                <div class="map-road road-2"></div>
+                <div class="map-road road-3"></div>
+                <div class="map-road road-4"></div>
+
+                <div class="map-pin">
+                    <span>✦</span>
+                </div>
+
+                <div class="map-label">
+                    MONROY EVENTOS
+                </div>
+
+            </div>
+
+
+            <div class="map-info">
+
+                <div class="map-small">
+                    RECEPCIÓN
+                </div>
+
+                <h3>
+                    Monroy Eventos
+                </h3>
+
+                <p>
+                    El lugar donde celebraremos
+                    una noche muy especial.
+                </p>
+
+                <div class="map-address">
+
+                    📍 Av. Central con Av. Bolivar,
+                    Villa El Salvador
+
+                </div>
+
+                <a
+                    id="mapButton"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="location-button">
+
+                    ✦ &nbsp; CÓMO LLEGAR
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONFIRMACIÓN
+===================================================== -->
+
+<section class="confirm-section">
+
+    <div class="section-inner">
+
+        <div class="confirm-box">
+
+            <div class="section-label">
+                TU PRESENCIA ES MUY IMPORTANTE
+            </div>
+
+            <div class="confirm-title">
+                ¿Nos acompañas?
+            </div>
+
+            <p class="confirm-text">
+
+                Por favor confirma tu asistencia
+                antes del
+
+                <strong id="confirmDate">
+                    10 de octubre de 2026
+                </strong>.
+
+            </p>
+
+            <a
+                id="whatsappButton"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="whatsapp-button">
+
+                CONFIRMAR ASISTENCIA
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MENSAJE FINAL
+===================================================== -->
+
+<section class="final-section">
+
+    <div class="final-content">
+
+        <div class="section-label">
+            CON TODO MI CARIÑO
+        </div>
+
+        <div class="final-name" id="finalName">
+            Cristina
+        </div>
+
+        <div class="final-text" id="finalMessage">
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    MIS 15 AÑOS · CRISTINA
+
+</footer>
+
+
+<!-- =====================================================
+     FUNCIONES
+===================================================== -->
+
+<script>
+
+/* =========================
+   MOSTRAR DATOS
+========================= */
+
+document.getElementById("coverName").textContent =
+    evento.nombre;
+
+document.getElementById("finalName").textContent =
+    evento.nombre;
+
+document.getElementById("coverDate").textContent =
+    evento.fecha
+        .replace(" de ", " · ")
+        .replace(" de ", " · ")
+        .toUpperCase();
+
+document.getElementById("mensaje").textContent =
+    evento.mensaje;
+
+document.getElementById("eventDate").textContent =
+    evento.fecha;
+
+document.getElementById("eventTime").textContent =
+    evento.hora;
+
+document.getElementById("eventPlace").textContent =
+    evento.lugar;
+
+document.getElementById("eventAddress").textContent =
+    evento.direccion;
+
+document.getElementById("dressCode").textContent =
+    evento.dressCode;
+
+document.getElementById("confirmDate").textContent =
+    evento.confirmarAntes;
+
+document.getElementById("finalMessage").textContent =
+    evento.mensajeFinal;
+
+
+/* =========================
+   GOOGLE MAPS
+========================= */
+
+document.getElementById("mapButton").href =
+    evento.mapa;
+
+
+/* =========================
+   WHATSAPP
+========================= */
+
+const textoWhatsApp =
+    `Hola, quiero confirmar mi asistencia a los 15 años de ${evento.nombre}.`;
+
+const whatsappURL =
+    `https://wa.me/${evento.whatsapp}?text=${encodeURIComponent(textoWhatsApp)}`;
+
+document.getElementById("whatsappButton").href =
+    whatsappURL;
+
+
+/* =========================
+   MÚSICA
+========================= */
+
+const musica =
+    document.getElementById("musica");
+
+const enterButton =
+    document.getElementById("enterButton");
+
+const musicButton =
+    document.getElementById("musicButton");
+
+
+enterButton.addEventListener("click", function(){
+
+    musica.volume = 0.35;
+
+    musica.play()
+        .then(function(){
+
+            musicButton.style.display = "flex";
+
+            musicButton.textContent = "♫";
+
+            musicButton.setAttribute(
+                "aria-label",
+                "Pausar música"
+            );
+
+        })
+        .catch(function(){
+
+            /*
+               Algunos navegadores pueden impedir
+               la reproducción. En ese caso no
+               hacemos nada y la invitación sigue
+               funcionando normalmente.
+            */
+
+        });
+
+});
+
+
+musicButton.addEventListener("click", function(){
+
+    if(musica.paused){
+
+        musica.play()
+            .then(function(){
+
+                musicButton.textContent = "♫";
+
+                musicButton.setAttribute(
+                    "aria-label",
+                    "Pausar música"
+                );
+
+            })
+            .catch(function(){});
+
+    }else{
+
+        musica.pause();
+
+        musicButton.textContent = "▶";
+
+        musicButton.setAttribute(
+            "aria-label",
+            "Reproducir música"
+        );
+
+    }
+
+});
+
+
+/* =========================
+   CUENTA REGRESIVA
+========================= */
+
+function actualizarCuentaRegresiva(){
+
+    const ahora =
+        new Date().getTime();
+
+    const fechaEvento =
+        new Date(
+            evento.fechaCuentaRegresiva
+        ).getTime();
+
+    const diferencia =
+        fechaEvento - ahora;
+
+    if(diferencia <= 0){
+
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
+
+        return;
+    }
+
+    const dias =
+        Math.floor(
+            diferencia /
+            (1000 * 60 * 60 * 24)
+        );
+
+    const horas =
+        Math.floor(
+            (diferencia /
+            (1000 * 60 * 60)) % 24
+        );
+
+    const minutos =
+        Math.floor(
+            (diferencia /
+            (1000 * 60)) % 60
+        );
+
+    const segundos =
+        Math.floor(
+            (diferencia /
+            1000) % 60
+        );
+
+    document.getElementById("days").textContent =
+        String(dias).padStart(2,"0");
+
+    document.getElementById("hours").textContent =
+        String(horas).padStart(2,"0");
+
+    document.getElementById("minutes").textContent =
+        String(minutos).padStart(2,"0");
+
+    document.getElementById("seconds").textContent =
+        String(segundos).padStart(2,"0");
+
+}
+
+actualizarCuentaRegresiva();
+
+setInterval(
+    actualizarCuentaRegresiva,
+    1000
+);
+
+</script>
+
+</body>
+</html>
+```
